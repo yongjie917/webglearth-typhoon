@@ -83,17 +83,19 @@
          }
      });
  }
- var markers=[];
- function addMarkers(data,level) {
+ var markers = [];
+
+ function addMarkers(data, level) {
      if (!data) return;
      map.removeMarker(markers);
-     markers=[];
+     markers = [];
      for (var i = 0; i < data.length; i++) {
          var info = data[i],
              lat = info['lat'] - 0,
              lng = info['lng'] - 0,
              point = [lat, lng];
-         var title = info['enname'] + '（' + name + '）',
+         var name = info['name'] || '',
+             title = info['enname'] + '（' + name + '）',
              power = info['power'] || '',
              speed = info['speed'] || '',
              strong = info['strong'] || '',
@@ -105,7 +107,8 @@
              tfid = info['tfid'] || '',
              timeformate = info['timeformate'] || '',
              pos = '纬度：' + lat + ',经度：' + lng;
-         var templateHtml = '<div><b>' + tfid + '号台风，' + timeformate + '</b><div>' +
+         var templateHtml = '<div style="background:#eee;"><strong style="color:blue;">' + title +
+          '</strong><b><br>' + tfid + '号台风，' + timeformate + '</b></div>' +
              '<br>当前位置 <b>' + pos + '</b>' +
              '<br>中心气压 <b>' + pressure + '</b> 百帕' +
              '<br>最大风速 <b>' + speed + '</b> 米/秒' +
@@ -115,7 +118,7 @@
              '<br>移动方向<b>' + movedirection + '</b> ' +
              '<br>七级半径<b>' + radius7 + '</b> 公里' +
              '<br>十级半径<b>' + radius10 + '</b> 公里';
-         var marker = WE.marker(point,'./images/typhoon.png',40).addTo(map);
+         var marker = WE.marker(point, './images/typhoon.png', 40).addTo(map);
          marker.bindPopup(templateHtml, { maxWidth: 150, closeButton: true }).openPopup();
          markers.push(marker);
      }

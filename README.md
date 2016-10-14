@@ -16,6 +16,8 @@ A typhoon web application base on WebGL Earth
 
 ## Screenshot
 
+![demo screenShot](https://raw.githubusercontent.com/viseye/webglearth-typhoon/master/public/images/screenshot.png)
+
 ![demo screenShot](https://raw.githubusercontent.com/viseye/webglearth-typhoon/master/public/images/show-compact2.gif)
 
 ## TODO
