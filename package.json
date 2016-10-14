@@ -1,0 +1,30 @@
+{
+  "name": "webglearth-typhoon",
+  "version": "1.0.0",
+  "description": "A typhoon web application running in any web browser with support for WebGL HTML5 statndard",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viseye/webglearth-typhoon.git"
+  },
+  "keywords": [
+    "webglearth",
+    "typhoon",
+    "earth",
+    "台风"
+  ],
+  "author": "giscafer <giscafer@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/viseye/webglearth-typhoon/issues"
+  },
+  "homepage": "https://github.com/viseye/webglearth-typhoon#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "node-typhoon": "^0.1.0"
+  }
+}

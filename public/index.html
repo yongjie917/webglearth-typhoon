@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, all" />
+    <script src="./scripts/webglearthapi.js"></script>
+    <script src="./scripts/cesiumWorkerBootstrapper.js"></script>
+    <title>Typhoon Web Application</title>
+    <script src="https://unpkg.com/jquery@3.1.1/dist/jquery.min.js"></script>
+    <script src="./scripts/map.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body onload="init()">
+    <div id="map"></div>
+    <div id="coords"></div>
+    <div id="buttons">
+        <input type="button" class="github" value="Open-source on Github@giscafer" onclick="starOnGithub();"/>
+        <br>
+        <br>
+        <input type="button" value="fullscreen" onclick="resetZoom();"/>
+        <br>
+        <br>
+        <input type="button" value="Zoom to typhoon center" id="realtime_center" onclick="flyToTyphoonCenter();"/>
+        <br>
+        <br>
+        <input type="button" value="Show real-time typhoon" id="realtime_typhoon" onclick="addRealTimeTyphoonMarker()"/><br>
+        <br>
+        <input type="button" style="display:none;" value="Show historical typhoon" id="historical_typhoon" onclick="addHistoricalTyphoonMarker()"/>
+        <br>
+    </div>
+    <div id="layercontrol">
+        Grand Canyon opacity:
+        <br> 0
+        <input type="range" id="opacity2" min="0" max="1" step="0.01" value="0.7">1
+        <br>
+    </div>
+</body>
+
+</html>
