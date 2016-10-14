@@ -39,9 +39,9 @@
      if (!level) {
          level = 5;
      }
-     document.getElementById('realtime_typhoon').disabled = true;
-     document.getElementById('historical_typhoon').disabled = false;
-     document.getElementById('realtime_center').disabled = false;
+     // document.getElementById('realtime_typhoon').disabled = true;
+     // document.getElementById('historical_typhoon').disabled = false;
+     document.getElementById('realtime_center').disabled = true;
 
      $.get(SERVER_URL + "api/typhoonActivity", function(res) {
          if (res.status === 200) {
@@ -52,6 +52,7 @@
                  var lat = data[0]['lat'] - 0,
                      lng = data[0]['lng'] - 0;
                  window.typhoonCenterPnt = [lat, lng];
+                 document.getElementById('realtime_center').disabled = false;
              } else {
                  window.typhoonCenterPnt = [23.18, 113.24];
                  alert('there is no typhoon！');
@@ -82,10 +83,11 @@
          }
      });
  }
-
+ var markers=[];
  function addMarkers(data,level) {
      if (!data) return;
-     console.log(data);
+     map.removeMarker(markers);
+     markers=[];
      for (var i = 0; i < data.length; i++) {
          var info = data[i],
              lat = info['lat'] - 0,
@@ -115,24 +117,20 @@
              '<br>十级半径<b>' + radius10 + '</b> 公里';
          var marker = WE.marker(point,'./images/typhoon.png',40).addTo(map);
          marker.bindPopup(templateHtml, { maxWidth: 150, closeButton: true }).openPopup();
+         markers.push(marker);
      }
      map.setView(typhoonCenterPnt, level);
- }
-
- function setZoom(zoom) {
-     map.setZoom(zoom);
- }
-
- function setPositionToEverest() {
-     map.setView([27.988056, 86.925278]);
+     console.log(markers);
  }
 
  function flyToTyphoonCenter() {
-     map.panTo([23.08, 113.14]);
+     map.panTo(typhoonCenterPnt);
+     return;
  }
  // center to GuangZhou China
  function resetZoom() {
-     map.panTo([23.08, 113.14]);
+     map.setView(typhoonCenterPnt);
+     return;
  }
 
  function starOnGithub() {
