@@ -14,9 +14,9 @@ A typhoon web application base on WebGL Earth
 > 2. node app.js
 > 3. Use the browser open http://localhost:3000/
 
-## ScreenShot
+## Screenshot
 
-![](https://raw.githubusercontent.com/viseye/webglearth-typhoon/master/public/show-compact2.gif)
+![demo screenShot](https://raw.githubusercontent.com/viseye/webglearth-typhoon/master/public/images/show-compact2.gif)
 
 ## TODO
 
