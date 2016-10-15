@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 // Additional middleware which will set headers that we need on each request.
-app.use(function(req, res, next) {
+app.use((req, res, next)=>{
     res.setHeader('Access-Control-Allow-Origin', '*');
     // Disable caching so we'll always get the latest comments.
     res.setHeader('Cache-Control', 'no-cache');
@@ -25,34 +25,18 @@ app.use(function(req, res, next) {
 //get real-time typhoon information 
 app.get('/api/typhoonActivity',(req,res)=>{
 	Typhoon.typhoonActivity().then(info=>{
-		res.send({
-			status:200,
-			data:info,
-			message:'request success!'
-		});
+		res.send(info);
 	}).catch(err=>{
-		console.error({
-			status:501,
-			error:err,
-			message:'request failure!'
-		});
+		res.send(err);
 	});
 });
 //get historical typhoon information 
 app.get('/api/typhoonList',(req,res)=>{
 	let year=new Date().getFullYear();
 	Typhoon.typhoonList(year).then(info=>{
-		res.send({
-			status:200,
-			data:info,
-			message:'request success!'
-		});
+		res.send(info);
 	}).catch(err=>{
-		console.error({
-			status:501,
-			error:err,
-			message:'request failure!'
-		});
+		res.send(err);
 	});
 });
 

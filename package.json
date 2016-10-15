@@ -1,6 +1,6 @@
 {
   "name": "webglearth-typhoon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A typhoon web application running in any web browser with support for WebGL HTML5 statndard",
   "main": "app.js",
   "scripts": {
@@ -25,6 +25,6 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "node-typhoon": "^1.0.0"
+    "node-typhoon": "^1.1.0"
   }
 }

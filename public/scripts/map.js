@@ -45,8 +45,8 @@
 
      $.get(SERVER_URL + "api/typhoonActivity", function(res) {
          if (res.status === 200) {
-             var data = JSON.parse(res.data);
-             console.info(data, level);
+            console.info(res.data);
+            var data=res.data;
              addMarkers(data);
              if (data.length > 0) {
                  var lat = data[0]['lat'] - 0,
@@ -76,7 +76,6 @@
      document.getElementById('realtime_typhoon').disabled = false;
      $.get(SERVER_URL + "api/typhoonList", function(res) {
          if (res.status === 200) {
-             var data = JSON.parse(res.data);
              // addMarkers(data);
          } else {
              alert('Server error!!!');
@@ -123,7 +122,6 @@
          markers.push(marker);
      }
      map.setView(typhoonCenterPnt, level);
-     console.log(markers);
  }
 
  function flyToTyphoonCenter() {
