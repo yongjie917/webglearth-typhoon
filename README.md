@@ -18,9 +18,9 @@ See: http://viseye.xyz/webglearth-typhoon/ for demos.
 
 ## Screenshot
 
-![demo screenShot](https://raw.githubusercontent.com/viseye/webglearth-typhoon/master/public/images/screenshot.png)
+![screenshot](./public/images/screenshot.png)
 
-![demo screenShot](https://raw.githubusercontent.com/viseye/webglearth-typhoon/master/public/images/show-compact2.gif)
+![show-compact2](./public/images/show-compact2.gif)
 
 ## TODO
 
