@@ -1,6 +1,8 @@
 # webglearth-typhoon
 
-A typhoon web application base on WebGL Earth
+A typhoon web application base on WebGL Earth,the browser with support for WebGL HTML5 standard,mobile devices such as iPhone, iPad or Android based mobile phones are going to be supported too.
+
+See: http://viseye.xyz/webglearth-typhoon/ for demos.
 
 ## Dependencies 
 
